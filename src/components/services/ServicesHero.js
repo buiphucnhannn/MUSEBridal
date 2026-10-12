@@ -19,7 +19,7 @@ export default function ServicesHero() {
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
           <div>
             <p className="eyebrow reveal">{h.eyebrow}</p>
-            <SplitText text={h.title} accent={h.accent} className="h-display mt-5 text-[2.6rem] sm:text-[3.4rem] lg:text-[3.8rem] xl:text-[4.4rem]" />
+            <SplitText text={h.title} accent={h.accent} breakBeforeAccent className="h-display mt-5 text-[2.6rem] leading-[1.18] sm:text-[3.4rem] lg:text-[3.8rem] xl:text-[4.4rem]" />
             <p className="reveal mt-6 max-w-lg text-justify text-[15px] leading-relaxed text-ink-soft sm:text-base" style={{ "--reveal-delay": "250ms" }}>
               {h.desc}
             </p>

@@ -35,14 +35,14 @@ function contentTop(el) {
   }
   return pageTop(node) - pageTop(el);
 }
-function scrollToTarget(lenis, el) {
+function scrollToTarget(lenis, el, force = false) {
   const max = document.documentElement.scrollHeight - window.innerHeight;
   const elTop = pageTop(el);
   const ct = contentTop(el);
   const isScreen = el.classList.contains("screen") || el.id === "top";
   let s = isScreen ? elTop - Math.max(0, CLEAR - ct) : elTop + ct - CLEAR;
   s = Math.max(0, Math.min(s, max));
-  lenis.scrollTo(s, { duration: 1.8, easing: easeOutExpo });
+  lenis.scrollTo(s, { duration: 1.8, easing: easeOutExpo, force });
 }
 // easing "expo out": khởi đầu nhanh, về đích rất êm (dùng cho cuộn tới anchor)
 const easeOutExpo = (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
@@ -94,7 +94,9 @@ export default function SmoothScroll() {
       if (!target) return;
       e.preventDefault();
       history.pushState(null, "", hash);
-      scrollToTarget(lenis, target);
+      // Nếu bấm từ menu mobile: menu đang khoá cuộn + Lenis đang dừng → chờ menu đóng (bỏ khoá) rồi mới cuộn.
+      // force: Lenis không bỏ qua lệnh cuộn kể cả khi vừa được start lại.
+      setTimeout(() => scrollToTarget(lenis, target, true), 60);
     };
     document.addEventListener("click", onClick, true);
 

@@ -114,7 +114,15 @@ export default function Hero() {
 
       {/* Nội dung giữa – dưới */}
       <div ref={textRef} className="relative z-10 flex h-full flex-col items-center justify-end px-5 pb-24 text-center text-white will-change-transform sm:pb-[max(7rem,calc(var(--screen)*0.12))] [@media(min-height:1000px)]:pb-[calc(var(--screen)*0.22)]">
-        <p className={cn("eyebrow mb-5 text-white/80", anim("[animation:fadeUp_1s_.8s_both]"))}>{hero.eyebrow}</p>
+        {/* Mobile: tách thành 2 dòng với dấu "·" ở giữa (tránh rớt 1 chữ); ≥sm: 1 dòng như cũ */}
+        <p className={cn("eyebrow mb-5 text-white/80", anim("[animation:fadeUp_1s_.8s_both]"))}>
+          {hero.eyebrow.split(" · ").map((part, i, arr) => (
+            <span key={part}>
+              <span className="block sm:inline">{part}</span>
+              {i < arr.length - 1 && <span className="block leading-none sm:inline sm:leading-normal"> · </span>}
+            </span>
+          ))}
+        </p>
         <SplitText
           as="h1"
           mode="char"

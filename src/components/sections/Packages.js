@@ -38,7 +38,7 @@ export default function Packages() {
               className={cn("absolute inset-0 transition-opacity duration-[1100ms] ease-out", active === i ? "opacity-100" : "opacity-0")}
               style={{ transform: `scale(${1 + Math.abs(p - (i === 0 ? 0.2 : 0.8)) * 0.06})` }}
             >
-              <Pic src={pk.image} alt={`${pk.name} – ${pk.sub}`} fill sizes="100vw" className="object-cover" style={{ objectPosition: pk.imagePos }} />
+              <Pic src={pk.image} alt={`${pk.name} – ${pk.sub}`} fill sizes="100vw" className={cn("object-cover", pk.imageFx)} style={{ objectPosition: pk.imagePos }} />
             </div>
           ))}
           <div className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/40 to-transparent" />
@@ -104,7 +104,7 @@ export default function Packages() {
       <section className="stack-only grid">
         {packages.map((pk, i) => (
           <article key={pk.id} className="reveal relative h-[78svh] min-h-[520px] overflow-hidden bg-ink lg:h-[var(--screen)]" style={{ "--reveal-delay": `${i * 100}ms` }}>
-            <Pic src={pk.image} alt={`${pk.name} – ${pk.sub}`} fill sizes="100vw" className="object-cover" style={{ objectPosition: pk.imagePos }} />
+            <Pic src={pk.image} alt={`${pk.name} – ${pk.sub}`} fill sizes="100vw" className={cn("object-cover", pk.imageFx)} style={{ objectPosition: pk.imagePos }} />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-ink/10 lg:bg-gradient-to-r lg:from-ink/85 lg:via-ink/40 lg:to-transparent" />
             <div className="absolute inset-0 hidden bg-gradient-to-t from-ink/60 via-transparent to-ink/20 lg:block" />
             <div className="absolute inset-0 flex flex-col justify-end p-7 lg:mx-auto lg:max-w-[1440px] lg:justify-center lg:px-10">

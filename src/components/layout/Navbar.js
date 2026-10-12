@@ -156,7 +156,7 @@ export default function Navbar() {
               href={item.href}
               onClick={() => setOpen(false)}
               className={cn(
-                "flex items-center justify-between border-b border-ink/10 py-4 font-serif text-3xl text-ink transition-all duration-500",
+                "flex items-center justify-between border-b border-ink/10 py-3.5 font-serif text-2xl text-ink transition-all duration-500",
                 open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
               )}
               style={{ transitionDelay: open ? `${120 + i * 50}ms` : "0ms" }}
@@ -173,7 +173,7 @@ export default function Navbar() {
           >
             Đặt lịch tư vấn <ArrowRight className="h-4 w-4" />
           </button>
-          <p className="mt-auto text-xs text-ink-muted">
+          <p className="mt-auto text-center text-xs text-ink-muted">
             Hotline / Zalo:{" "}
             <a href={`tel:${siteConfig.phoneRaw}`} className="text-mocha">
               {siteConfig.phone}

@@ -17,6 +17,7 @@ export default function SplitText({
   step = 45,
   baseDelay = 0,
   manual = false, // true: chỉ hiện khi visible=true, useReveal bỏ qua
+  breakBeforeAccent = false, // true: phần nhấn (accent) luôn xuống dòng riêng
 }) {
   let i = 0;
   const render = (str, extra = "") => {
@@ -48,7 +49,7 @@ export default function SplitText({
       {render(text)}
       {accent && (
         <>
-          <span className="inline-block">&nbsp;</span>
+          {breakBeforeAccent ? <br /> : <span className="inline-block">&nbsp;</span>}
           {render(accent, accentClass)}
         </>
       )}

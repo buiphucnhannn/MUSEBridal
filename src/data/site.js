@@ -99,7 +99,7 @@ export const services = [
 export const servicesPage = {
   hero: {
     eyebrow: "Dịch vụ của Muse",
-    title: "Một buổi chụp,",
+    title: "Một buổi chụp",
     accent: "trọn vẹn mọi điều.",
     desc: "Từ trang phục, makeup đến ekip và sản phẩm bàn giao — Muse gói mọi thứ hai bạn cần cho một bộ ảnh cưới hoàn chỉnh trong một buổi chụp duy nhất.",
     images: [
@@ -315,7 +315,9 @@ export const packages = [
     name: "Muse Basic",
     desc: "Vẻ đẹp được chăm chút trong không gian phim trường, nơi từng góc sáng và đường nét tạo nên những khung hình tinh tế.",
     image: photos.studioRedFlowers,
-    imagePos: "center 35%",
+    imagePos: "center 24%",
+    // desktop: phóng nhẹ + dịch phải để cặp đôi (hơi lệch trái trong ảnh gốc) nằm giữa khung; mobile khung dọc không cần
+    imageFx: "lg:scale-[1.16] lg:translate-x-[8%]",
     collectionSlug: "muse-studio",
   },
   {
