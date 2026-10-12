@@ -1,20 +1,24 @@
 import Hero from "@/components/sections/Hero";
-import Features from "@/components/sections/Features";
-import Gallery from "@/components/sections/Gallery";
+import About from "@/components/sections/About";
+import Collections from "@/components/sections/Collections";
+import Packages from "@/components/sections/Packages";
+import Experience from "@/components/sections/Experience";
 import Pricing from "@/components/sections/Pricing";
-import Testimonials from "@/components/sections/Testimonials";
-import CTA from "@/components/sections/CTA";
+import Offers from "@/components/sections/Offers";
+import Moments from "@/components/sections/Moments";
 import Contact from "@/components/sections/Contact";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <Features />
-      <Gallery />
+      <About />
+      <Collections />
+      <Packages />
+      <Experience />
       <Pricing />
-      <Testimonials />
-      <CTA />
+      <Offers />
+      <Moments />
       <Contact />
     </>
   );
